@@ -1,0 +1,71 @@
+﻿@model Online_Training_management_system.Models.Trainings
+
+
+
+@if(@Session["EmailId"] == null)
+{
+<div class="button-container">
+    @Html.ActionLink("Signup  ", "Register", new { Controller = "User", Action = "Register" })|
+    @Html.ActionLink("Login", "Login", new { Controller = "User", Action = "Login" })
+</div>
+}
+
+
+<p>
+
+    Welcome,
+    @Session["EmailId"]
+
+</p>
+
+
+@{
+    ViewBag.Title = "View Course Details";
+}
+
+<h2>View Course Details</h2>
+
+<div>
+    <h4>Courses</h4>
+    <hr />
+    <dl class="dl-horizontal">
+       
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TrainingName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrainingName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StartDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StartDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EndDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EndDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fees)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fees)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OTSDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Candidate">
+    <Key>
+      <PropertyRef Name="EmailAddress" />
+    </Key>
+    <Property Name="FirstName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EmailAddress" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Registrations" Relationship="Self.fk_EmailAddress" FromRole="Candidates" ToRole="Registrations" />
+  </EntityType>
+  <EntityType Name="Registration">
+    <Key>
+      <PropertyRef Name="RegistrationId" />
+    </Key>
+    <Property Name="RegistrationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TrainingId" Type="Int32" Nullable="false" />
+    <Property Name="EmailAddress" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FeesPaid" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Candidate" Relationship="Self.fk_EmailAddress" FromRole="Registrations" ToRole="Candidates" />
+    <NavigationProperty Name="Training" Relationship="Self.fk_trainingId" FromRole="Registrations" ToRole="Trainings" />
+  </EntityType>
+  <EntityType Name="Training">
+    <Key>
+      <PropertyRef Name="TrainingId" />
+    </Key>
+    <Property Name="TrainingId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TrainingName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="EndDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Fees" Type="Decimal" Precision="7" Scale="2" Nullable="false" />
+    <NavigationProperty Name="Registrations" Relationship="Self.fk_trainingId" FromRole="Trainings" ToRole="Registrations" />
+  </EntityType>
+  <Association Name="fk_EmailAddress">
+    <End Role="Candidates" Type="Self.Candidate" Multiplicity="1" />
+    <End Role="Registrations" Type="Self.Registration" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Candidates">
+        <PropertyRef Name="EmailAddress" />
+      </Principal>
+      <Dependent Role="Registrations">
+        <PropertyRef Name="EmailAddress" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_trainingId">
+    <End Role="Trainings" Type="Self.Training" Multiplicity="1" />
+    <End Role="Registrations" Type="Self.Registration" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Trainings">
+        <PropertyRef Name="TrainingId" />
+      </Principal>
+      <Dependent Role="Registrations">
+        <PropertyRef Name="TrainingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="OTSDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Candidates" EntityType="Self.Candidate" />
+    <EntitySet Name="Registrations" EntityType="Self.Registration" />
+    <EntitySet Name="Trainings" EntityType="Self.Training" />
+    <AssociationSet Name="fk_EmailAddress" Association="Self.fk_EmailAddress">
+      <End Role="Candidates" EntitySet="Candidates" />
+      <End Role="Registrations" EntitySet="Registrations" />
+    </AssociationSet>
+    <AssociationSet Name="fk_trainingId" Association="Self.fk_trainingId">
+      <End Role="Trainings" EntitySet="Trainings" />
+      <End Role="Registrations" EntitySet="Registrations" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

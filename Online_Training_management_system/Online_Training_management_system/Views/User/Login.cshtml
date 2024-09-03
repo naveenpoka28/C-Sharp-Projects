@@ -1,0 +1,61 @@
+﻿@model Online_Training_management_system.Models.Candidate
+
+
+@if (@Session["EmailId"] == null)
+{
+    <div class="button-container">
+        @Html.ActionLink("Signup  ", "Register", new { Controller = "User", Action = "Register" })|
+        @Html.ActionLink("Login", "Login", new { Controller = "User", Action = "Login" })
+    </div>
+}
+
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>User Login</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4></h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.EmailAddress, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.EmailAddress, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EmailAddress, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Login" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<p>
+    @ViewBag.ErrorMsg
+</p>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

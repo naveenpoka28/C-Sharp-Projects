@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Online_Training_management_system.Models.Registrations>
+
+@if (@Session["EmailId"] == null)
+{
+    <div class="button-container">
+        @Html.ActionLink("Signup  ", "Register", new { Controller = "User", Action = "Register" })|
+        @Html.ActionLink("Login", "Login", new { Controller = "User", Action = "Login" })
+    </div>
+}
+<p>
+
+    Welcome,
+    @Session["EmailId"]
+
+</p>
+
+@{
+    ViewBag.Title = "Training Registrations";
+}
+
+<h2>Training Registrations</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TrainingName)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.EmailAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FeesPaid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TrainingName)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.EmailAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FeesPaid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditRegistration", new { registrationid = item.RegistrationId }) |
+                @Html.ActionLink("Details", "Details", new { registrationid = item.RegistrationId }) |
+                @Html.ActionLink("Delete", "Deleteregistration", new { registrationid = item.RegistrationId })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,12 @@
+C:\Users\KISHORE\source\repos\Online_Training_Management_System\OTMS_DAL\bin\Debug\OTMS_DAL.dll.config
+C:\Users\KISHORE\source\repos\Online_Training_Management_System\OTMS_DAL\bin\Debug\OTMS_DAL.dll
+C:\Users\KISHORE\source\repos\Online_Training_Management_System\OTMS_DAL\bin\Debug\OTMS_DAL.pdb
+C:\Users\KISHORE\source\repos\Online_Training_Management_System\OTMS_DAL\bin\Debug\EntityFramework.dll
+C:\Users\KISHORE\source\repos\Online_Training_Management_System\OTMS_DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\KISHORE\source\repos\Online_Training_Management_System\OTMS_DAL\bin\Debug\EntityFramework.xml
+C:\Users\KISHORE\source\repos\Online_Training_Management_System\OTMS_DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\KISHORE\source\repos\Online_Training_Management_System\OTMS_DAL\obj\Debug\OTMS_DAL.csprojAssemblyReference.cache
+C:\Users\KISHORE\source\repos\Online_Training_Management_System\OTMS_DAL\obj\Debug\OTMS_DAL.csproj.CoreCompileInputs.cache
+C:\Users\KISHORE\source\repos\Online_Training_Management_System\OTMS_DAL\obj\Debug\OTMS_DAL.csproj.CopyComplete
+C:\Users\KISHORE\source\repos\Online_Training_Management_System\OTMS_DAL\obj\Debug\OTMS_DAL.dll
+C:\Users\KISHORE\source\repos\Online_Training_Management_System\OTMS_DAL\obj\Debug\OTMS_DAL.pdb

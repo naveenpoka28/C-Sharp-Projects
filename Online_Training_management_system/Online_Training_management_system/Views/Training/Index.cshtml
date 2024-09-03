@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Online_Training_management_system.Models.Trainings>
+
+@if (@Session["EmailId"] == null)
+{
+    <div class="button-container">
+        @Html.ActionLink("Signup  ", "Register", new { Controller = "User", Action = "Register" })|
+        @Html.ActionLink("Login", "Login", new { Controller = "User", Action = "Login" })
+    </div>
+}
+<p>
+
+    Welcome,
+    @Session["Emailid"]
+
+</p>
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+<table class="table">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.TrainingName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StartDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EndDate)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.TrainingName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndDate)
+            </td>
+
+            <td>
+                @Html.ActionLink("Details", "ViewTrainingDetails", new { trainingid = item.TrainingId }) |
+                @Html.ActionLink("Register", "AddRegistration", new { trainingid = item.TrainingId, Controller = "Registration", Action = "AddRegistration" }) |
+
+            </td>
+        </tr>
+    }
+
+</table>

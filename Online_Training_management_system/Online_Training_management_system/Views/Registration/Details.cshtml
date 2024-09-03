@@ -1,0 +1,63 @@
+﻿@model Online_Training_management_system.Models.Registrations
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Registrations</h4>
+    <hr />
+    <dl class="dl-horizontal">
+       
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TrainingId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrainingId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmailAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmailAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FeesPaid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FeesPaid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model=>model.TrainingName)
+            </dt>
+        <dd>
+            @Html.DisplayFor(model=>model.TrainingName)
+            </dd>
+
+
+
+
+
+    </dl>
+</div>
+<p>
+    
+    @Html.ActionLink("Back to List", "Index")
+</p>

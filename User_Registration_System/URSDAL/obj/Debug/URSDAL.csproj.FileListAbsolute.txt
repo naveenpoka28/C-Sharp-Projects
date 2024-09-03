@@ -1,0 +1,12 @@
+C:\Users\KISHORE\source\repos\UserRegistrationsystemm\URSDAL\bin\Debug\URSDAL.dll.config
+C:\Users\KISHORE\source\repos\UserRegistrationsystemm\URSDAL\bin\Debug\URSDAL.dll
+C:\Users\KISHORE\source\repos\UserRegistrationsystemm\URSDAL\bin\Debug\URSDAL.pdb
+C:\Users\KISHORE\source\repos\UserRegistrationsystemm\URSDAL\bin\Debug\EntityFramework.dll
+C:\Users\KISHORE\source\repos\UserRegistrationsystemm\URSDAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\KISHORE\source\repos\UserRegistrationsystemm\URSDAL\bin\Debug\EntityFramework.xml
+C:\Users\KISHORE\source\repos\UserRegistrationsystemm\URSDAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\KISHORE\source\repos\UserRegistrationsystemm\URSDAL\obj\Debug\URSDAL.csprojAssemblyReference.cache
+C:\Users\KISHORE\source\repos\UserRegistrationsystemm\URSDAL\obj\Debug\URSDAL.csproj.CoreCompileInputs.cache
+C:\Users\KISHORE\source\repos\UserRegistrationsystemm\URSDAL\obj\Debug\URSDAL.csproj.CopyComplete
+C:\Users\KISHORE\source\repos\UserRegistrationsystemm\URSDAL\obj\Debug\URSDAL.dll
+C:\Users\KISHORE\source\repos\UserRegistrationsystemm\URSDAL\obj\Debug\URSDAL.pdb
